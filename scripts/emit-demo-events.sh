@@ -32,7 +32,7 @@ ADDR="$(cast wallet address --private-key "$PRIVATE_KEY")"
 COUNTERPARTY="0x3333333333333333333333333333333333333333"
 
 extract_hash() {
-  python3 -c 'import sys,re; t=sys.stdin.read(); m=re.search(r"0x[0-9a-fA-F]{64}", t); print(m.group(0) if m else "")' <<< "$1"
+  python3 -c 'import sys,re; t=sys.stdin.read(); m=re.search(r"transactionHash\s+(0x[0-9a-fA-F]{64})", t); print(m.group(1) if m else "")' <<< "$1"
 }
 
 echo "Minting 1,000,000 TRIAGE to $ADDR"

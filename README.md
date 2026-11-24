@@ -72,14 +72,14 @@ Expected result: 20 Solidity tests and 7 policy tests pass, and the agent prints
 The scripts refuse any chain id other than `84532` and `5318007`.
 
 1. Copy `.env.example` to `.env` and put a **fresh throwaway testnet key** in `PRIVATE_KEY`. `cast wallet new` will generate one. Never use a mainnet key or a wallet that holds real funds.
-2. Fund that address with Base Sepolia ETH from a free faucet. If the faucet asks for a captcha or a login, complete it yourself; do not wire a paid service or an existing funded wallet into this project.
-3. Swap a little of that ETH for Lasna lREACT:
+2. Fund that address with Base Sepolia ETH from a free faucet (for origin/destination gas) and, if needed, Ethereum Sepolia ETH (for the official lREACT swap). If a faucet asks for a captcha or a login, complete it yourself; do not wire a paid service or an existing funded wallet into this project.
+3. Swap a little Ethereum Sepolia ETH for Lasna lREACT:
 
    ```bash
    ./scripts/request-lreact.sh
    ```
 
-   This calls the official faucet at `0x2afaFD298b23b62760711756088F75B7409f5967` (`request(address)`), which pays 100 lREACT per 1 ETH sent, max 5 ETH per request.
+   This calls the official Ethereum Sepolia faucet at `0x9b9BB25f1A81078C544C829c5EB7822d747Cf434` (`request(address)`), which pays 100 lREACT per 1 ETH sent, max 5 ETH per request. The official Base Sepolia faucet at `0x2afaFD298b23b62760711756088F75B7409f5967` works the same way if you pass `base` as the first argument.
 4. Deploy:
 
    ```bash

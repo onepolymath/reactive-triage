@@ -1,0 +1,23 @@
+{
+  "network": "testnet-only",
+  "deployer": "0x48dd7c44cF3306CEa5d274DDa347a46A3Cb217Ad",
+  "clerk": "0x48dd7c44cF3306CEa5d274DDa347a46A3Cb217Ad",
+  "baseSepolia": {
+    "chainId": 84532,
+    "rpc": "https://sepolia.base.org",
+    "explorer": "https://sepolia.basescan.org",
+    "callbackProxy": "0x476F44b11F5C942c58f4c8E3d0300E5710743585",
+    "demoToken": "0xc5AC27969917254e6D0f9331b33FA88dF64f5947",
+    "demoTokenTx": "0x83707590d9fd7aefb595dd5878cfc92502d3e1282192cea2d863d43f9a143731",
+    "triageDesk": "0xc871e77f28c44a3AD83872067db87619696640f3",
+    "triageDeskTx": "0x269e4d2e6fb00cfc74b3df6e6de547aa9f1246f141c4aced29f4e3afe8347d4f"
+  },
+  "lasna": {
+    "chainId": 5318007,
+    "rpc": "https://lasna-rpc.rnk.dev/",
+    "explorer": "https://lasna.reactscan.net",
+    "triageReactive": "0xc5AC27969917254e6D0f9331b33FA88dF64f5947",
+    "triageReactiveTx": "0x2c51ed6d199721682cf0d230646c8ae8a92e9e1e5f345cecc3eb35c66e6584e4"
+  },
+  "writtenAt": "2026-11-24T18:23:30.849052+00:00"
+}

@@ -74,8 +74,7 @@ echo "Deploying DemoToken on Base Sepolia..."
 TOKEN_OUT="$(forge create src/DemoToken.sol:DemoToken \
   --rpc-url "$BASE_SEPOLIA_RPC" \
   --private-key "$PRIVATE_KEY" \
-  --broadcast \
-  --json)"
+  --broadcast --json)"
 TOKEN_DEPLOYED="$(python3 -c "import json,sys; print(json.load(sys.stdin)['deployedTo'])" <<<"$TOKEN_OUT")"
 TOKEN_TX="$(python3 -c "import json,sys; print(json.load(sys.stdin)['transactionHash'])" <<<"$TOKEN_OUT")"
 
@@ -85,8 +84,8 @@ DESK_OUT="$(forge create src/TriageDesk.sol:TriageDesk \
   --private-key "$PRIVATE_KEY" \
   --broadcast \
   --value "$DESK_VALUE" \
-  --constructor-args "$CALLBACK_PROXY" "$REACTIVE_ADDR" "$CLERK" \
-  --json)"
+  --json \
+  --constructor-args "$CALLBACK_PROXY" "$REACTIVE_ADDR" "$CLERK")"
 DESK_DEPLOYED="$(python3 -c "import json,sys; print(json.load(sys.stdin)['deployedTo'])" <<<"$DESK_OUT")"
 DESK_TX="$(python3 -c "import json,sys; print(json.load(sys.stdin)['transactionHash'])" <<<"$DESK_OUT")"
 
@@ -96,8 +95,11 @@ REACT_OUT="$(forge create src/TriageReactive.sol:TriageReactive \
   --private-key "$PRIVATE_KEY" \
   --broadcast \
   --value "$REACTIVE_VALUE" \
-  --constructor-args 84532 "$TOKEN_DEPLOYED" "$DESK_DEPLOYED" "$GAS_LIMIT" "$LARGE_TRANSFER" "$LARGE_APPROVAL" "$DUST" \
-  --json)"
+  --priority-gas-price 2gwei \
+  --gas-price 250gwei \
+  --timeout 180 \
+  --json \
+  --constructor-args 84532 "$TOKEN_DEPLOYED" "$DESK_DEPLOYED" "$GAS_LIMIT" "$LARGE_TRANSFER" "$LARGE_APPROVAL" "$DUST")"
 REACT_DEPLOYED="$(python3 -c "import json,sys; print(json.load(sys.stdin)['deployedTo'])" <<<"$REACT_OUT")"
 REACT_TX="$(python3 -c "import json,sys; print(json.load(sys.stdin)['transactionHash'])" <<<"$REACT_OUT")"
 

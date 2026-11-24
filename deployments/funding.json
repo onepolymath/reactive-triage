@@ -1,15 +1,25 @@
 {
   "network": "testnet-only",
   "deployer": "0x48dd7c44cF3306CEa5d274DDa347a46A3Cb217Ad",
+  "ethereumSepolia": {
+    "chainId": 11155111,
+    "faucet": "Official Reactive lREACT faucet (request(address))",
+    "faucetAddress": "0x9b9BB25f1A81078C544C829c5EB7822d747Cf434",
+    "amountEth": "0.02",
+    "txHash": "0xc6b17cfeb3909396d4b5e636655f57f113fd17db6782efcfae4e8fb929beda63",
+    "explorer": "https://sepolia.etherscan.io/tx/0xc6b17cfeb3909396d4b5e636655f57f113fd17db6782efcfae4e8fb929beda63",
+    "note": "1 ETH -> 100 lREACT. 0.02 ETH was sent; Lasna credited 2.1 lREACT."
+  },
   "baseSepolia": {
     "faucet": "VibeKast public /api/v2/faucet (no login, no captcha, address only)",
     "amountEth": "0.0001",
     "txHash": "0x3ece560f820b83f0d0239b3fd6f38ba279e9c92714b5ce9ecbe47959065b3296",
     "explorer": "https://sepolia.basescan.org/tx/0x3ece560f820b83f0d0239b3fd6f38ba279e9c92714b5ce9ecbe47959065b3296",
-    "note": "This drip is enough for cheap Base Sepolia deploys, but not for the official lREACT swap. Lasna was ~100 gwei when measured, so deploying TriageReactive needs on the order of 0.07 lREACT (~0.0007 ETH sent to the official faucet). Do not drain this wallet into the faucet until more Base Sepolia or Ethereum Sepolia ETH is added."
+    "note": "This drip was enough for the Base Sepolia deploys, demo events, and verdicts at ~0.006 gwei. No bridge was required."
   },
   "lasna": {
-    "balanceEth": "0",
-    "status": "unfunded"
+    "balanceEthReceived": "2.1",
+    "status": "funded",
+    "note": "Received after the Ethereum Sepolia faucet request. Half was deposited into TriageReactive at deploy time."
   }
 }

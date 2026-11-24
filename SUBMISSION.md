@@ -1,6 +1,6 @@
 # Draft BUIDL — Triage (Reactive Omni Buildathon)
 
-Paste or adapt this on DoraHacks when submitting. Do not submit until the GitHub repository is public, the demo video is recorded, and (if faucets were completed) live testnet addresses and full-loop transaction hashes are filled in.
+Paste or adapt this on DoraHacks when submitting. Do not submit until the GitHub repository is public and the demo video is recorded. Live testnet addresses and full-loop transaction hashes are filled in below.
 
 **Deadline:** 5 December 2026, 21:00 Africa/Lagos (20:00 Europe/London).
 
@@ -33,9 +33,9 @@ This is a personal automation you can leave running, and an AI clerk that is act
 
 ## Deployed addresses (fill after testnet deploy)
 
-- DemoToken (Base Sepolia, 84532): `TBD`
-- TriageDesk (Base Sepolia, 84532): `TBD`
-- TriageReactive (Lasna, 5318007): `TBD`
+- DemoToken (Base Sepolia, 84532): [`0xc5AC27969917254e6D0f9331b33FA88dF64f5947`](https://sepolia.basescan.org/address/0xc5AC27969917254e6D0f9331b33FA88dF64f5947)
+- TriageDesk (Base Sepolia, 84532): [`0xc871e77f28c44a3AD83872067db87619696640f3`](https://sepolia.basescan.org/address/0xc871e77f28c44a3AD83872067db87619696640f3)
+- TriageReactive (Lasna, 5318007): [`0xc5AC27969917254e6D0f9331b33FA88dF64f5947`](https://lasna.reactscan.net/address/0xc5AC27969917254e6D0f9331b33FA88dF64f5947)
 - Callback proxy (official): `0x476F44b11F5C942c58f4c8E3d0300E5710743585`
 - System contract (Lasna): `0x8888888888888888888888888888888888888888`
 
@@ -43,10 +43,10 @@ This is a personal automation you can leave running, and an AI clerk that is act
 
 The submission requires the origin event, the Lasna `react` transaction, and the destination callback.
 
-- Origin (unlimited approval or large transfer) on Base Sepolia: `TBD`
-- Reactive `react()` on Lasna: `TBD`
-- Callback `openCase` on Base Sepolia: `TBD`
-- Policy `fileVerdict` on Base Sepolia (optional but recommended): `TBD`
+- Origin (unlimited approval) on Base Sepolia: [`0x91d290f5d436bf968c8c5d2ea07181e31d9f88ccbefa99b1fc09ee5814239892`](https://sepolia.basescan.org/tx/0x91d290f5d436bf968c8c5d2ea07181e31d9f88ccbefa99b1fc09ee5814239892)
+- Reactive `react()` on Lasna: [`0xdefbb2e88bf5a55275ba1f0580e2b757e5d38cc32b49b7be4d150880f4598ae4`](https://lasna.reactscan.net/tx/0xdefbb2e88bf5a55275ba1f0580e2b757e5d38cc32b49b7be4d150880f4598ae4)
+- Callback `openCase` on Base Sepolia (case 4): [`0x3c5249ffa8b98a3a8e192a6167354aab966ed23929efac3b53504a132c40c5fc`](https://sepolia.basescan.org/tx/0x3c5249ffa8b98a3a8e192a6167354aab966ed23929efac3b53504a132c40c5fc)
+- Policy `fileVerdict` on Base Sepolia (escalate + `AlertRaised`): [`0x235e000b902e55560d62070a31064b94ee407403e453ead508687e053317910a`](https://sepolia.basescan.org/tx/0x235e000b902e55560d62070a31064b94ee407403e453ead508687e053317910a)
 
 ## Demo video
 
@@ -60,8 +60,8 @@ Make the repository **public** immediately before submitting (the hackathon requ
 ## Submitter checklist (Yusuf)
 
 1. Review the private repository and this draft.
-2. If the throwaway testnet address is still unfunded, use a free Base Sepolia faucet on the address in `.env` (never a mainnet or real-funds wallet). If the faucet shows a captcha or login, complete it yourself. Then run `scripts/request-lreact.sh` and `scripts/deploy-testnet.sh`.
-3. Run `scripts/emit-demo-events.sh`, wait for the Lasna reaction and the Base Sepolia callback, file verdicts with the policy agent, and copy every hash into this file and `deployments/loop.json`.
+2. Live testnet deploy is complete. Addresses and full-loop hashes are in this file and in `deployments/testnet.json` / `deployments/loop.json`. Do not redeploy unless you are starting a fresh demo.
+3. Demo events, Lasna reactions, Base Sepolia callbacks, and policy verdicts (including `AlertRaised` on the unlimited approval) are already recorded in `deployments/loop.json`.
 4. Record a demo video shorter than 3 minutes and upload it where DoraHacks can reach it.
 5. Register for the Reactive Omni Buildathon on DoraHacks if you have not already.
 6. Make `onepolymath/reactive-triage` public.

@@ -1,0 +1,96 @@
+{
+  "network": "testnet-only",
+  "primary": "unlimitedApproval",
+  "writtenAt": "2026-11-24T18:26:25.814391+00:00",
+  "contracts": {
+    "demoToken": {
+      "chain": "Base Sepolia",
+      "chainId": 84532,
+      "address": "0xc5AC27969917254e6D0f9331b33FA88dF64f5947",
+      "explorer": "https://sepolia.basescan.org/address/0xc5AC27969917254e6D0f9331b33FA88dF64f5947",
+      "deployTx": "0x83707590d9fd7aefb595dd5878cfc92502d3e1282192cea2d863d43f9a143731"
+    },
+    "triageDesk": {
+      "chain": "Base Sepolia",
+      "chainId": 84532,
+      "address": "0xc871e77f28c44a3AD83872067db87619696640f3",
+      "explorer": "https://sepolia.basescan.org/address/0xc871e77f28c44a3AD83872067db87619696640f3",
+      "deployTx": "0x269e4d2e6fb00cfc74b3df6e6de547aa9f1246f141c4aced29f4e3afe8347d4f"
+    },
+    "triageReactive": {
+      "chain": "Lasna",
+      "chainId": 5318007,
+      "address": "0xc5AC27969917254e6D0f9331b33FA88dF64f5947",
+      "explorer": "https://lasna.reactscan.net/address/0xc5AC27969917254e6D0f9331b33FA88dF64f5947",
+      "deployTx": "0x2c51ed6d199721682cf0d230646c8ae8a92e9e1e5f345cecc3eb35c66e6584e4"
+    }
+  },
+  "loop": {
+    "note": "Primary full loop is the unlimited approval (case 4), which the policy agent escalated and which emitted AlertRaised.",
+    "origin": {
+      "chain": "Base Sepolia",
+      "event": "unlimitedApproval",
+      "tx": "0x91d290f5d436bf968c8c5d2ea07181e31d9f88ccbefa99b1fc09ee5814239892",
+      "explorer": "https://sepolia.basescan.org/tx/0x91d290f5d436bf968c8c5d2ea07181e31d9f88ccbefa99b1fc09ee5814239892"
+    },
+    "react": {
+      "chain": "Lasna",
+      "tx": "0xdefbb2e88bf5a55275ba1f0580e2b757e5d38cc32b49b7be4d150880f4598ae4",
+      "explorer": "https://lasna.reactscan.net/tx/0xdefbb2e88bf5a55275ba1f0580e2b757e5d38cc32b49b7be4d150880f4598ae4"
+    },
+    "callback": {
+      "chain": "Base Sepolia",
+      "event": "openCase caseId=4",
+      "tx": "0x3c5249ffa8b98a3a8e192a6167354aab966ed23929efac3b53504a132c40c5fc",
+      "explorer": "https://sepolia.basescan.org/tx/0x3c5249ffa8b98a3a8e192a6167354aab966ed23929efac3b53504a132c40c5fc"
+    },
+    "verdict": {
+      "chain": "Base Sepolia",
+      "event": "fileVerdict + AlertRaised caseId=4 action=escalate",
+      "tx": "0x235e000b902e55560d62070a31064b94ee407403e453ead508687e053317910a",
+      "explorer": "https://sepolia.basescan.org/tx/0x235e000b902e55560d62070a31064b94ee407403e453ead508687e053317910a"
+    }
+  },
+  "allCases": [
+    {
+      "caseId": 1,
+      "kind": "mint",
+      "score": 20,
+      "action": "record",
+      "originTx": "0x4217399fcaf779253dd58f9c002f5c505caa2bfff80923b6efc239c8afeeb9d0",
+      "reactTx": "0xc0175855f9dd51a9564e0077d7fe6fc1f0fa6ff81ad8ccec45756c967fae4c07",
+      "callbackTx": "0x23158c3b5e93816aeef10137859f8059433123d007e70edc52f939ef62302301",
+      "verdictTx": "0xc7e2a8dc5bfed6a84a1119c2f78e4dc897fe62f362068dbb7ffd9384e698cccd"
+    },
+    {
+      "caseId": 2,
+      "kind": "routineTransfer",
+      "score": 35,
+      "action": "record",
+      "originTx": "0x02d480f915ce7d15f97fdc445fe048eddea21b702d17790b60963c8ce4d89bba",
+      "reactTx": "0x177c3e79bd7e2ad3e8523a017c11d6bc5b8af301aac48cb12a505e1ba0c138fe",
+      "callbackTx": "0x7f2173575623561bf267117109c0282ab27c454177e391ac283e46f7a9e7939b",
+      "verdictTx": "0xac128d2b3ab5c292e841fa94bc15b753f3a2bcb26a567a51eb2db041e4e93db8"
+    },
+    {
+      "caseId": 3,
+      "kind": "largeTransfer",
+      "score": 75,
+      "action": "watch",
+      "originTx": "0xab17abb8eabdde895bb5519dfbbad373765781f3c2acca20e2175678b8fb8d3f",
+      "reactTx": "0x7df5bd03d66b4c52d856985cc0e6da1629801c63bd99f2f797a7c58f8e561208",
+      "callbackTx": "0x3b43bc241040e6359c8c5f86eadf6ad39213c86035ccc97377ce66b9e42d0265",
+      "verdictTx": "0x42d609fbe1b4107951255545a28638d3c300bacc42a7a6069747c93494d3e245"
+    },
+    {
+      "caseId": 4,
+      "kind": "unlimitedApproval",
+      "score": 90,
+      "action": "escalate",
+      "originTx": "0x91d290f5d436bf968c8c5d2ea07181e31d9f88ccbefa99b1fc09ee5814239892",
+      "reactTx": "0xdefbb2e88bf5a55275ba1f0580e2b757e5d38cc32b49b7be4d150880f4598ae4",
+      "callbackTx": "0x3c5249ffa8b98a3a8e192a6167354aab966ed23929efac3b53504a132c40c5fc",
+      "verdictTx": "0x235e000b902e55560d62070a31064b94ee407403e453ead508687e053317910a"
+    }
+  ]
+}
