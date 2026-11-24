@@ -1,0 +1,26 @@
+# Secrets — never commit the throwaway testnet key
+.env
+.env.*
+!.env.example
+
+# Foundry
+out/
+cache/
+broadcast/
+tmp/
+
+# Editors / OS
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Local notes
+*.log
